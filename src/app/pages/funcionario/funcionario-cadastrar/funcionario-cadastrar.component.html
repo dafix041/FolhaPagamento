@@ -1,0 +1,17 @@
+<!-- funcionario-cadastrar.component.html -->
+
+<h1>Cadastrar Funcionário</h1>
+
+<form>
+  <div>
+    <label>Nome:</label>
+    <input type="text" [(ngModel)]="nome" name="nome" />
+  </div>
+  <div>
+    <label>CPF:</label>
+    <input type="text" [(ngModel)]="cpf" name="cpf" />
+  </div>
+  <div>
+    <button (click)="cadastrar()">Cadastrar Funcionário</button>
+  </div>
+</form>

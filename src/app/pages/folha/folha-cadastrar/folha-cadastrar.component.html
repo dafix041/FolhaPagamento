@@ -1,0 +1,28 @@
+<h1>Cadastrar Folha de Pagamento</h1>
+
+<div>
+  <label for="valor">Valor:</label>
+  <input type="number" id="valor" [(ngModel)]="folha.valor" name="valor" />
+</div>
+<div>
+  <label for="quantidade">Quantidade:</label>
+  <input type="number" id="quantidade" [(ngModel)]="folha.quantidade" name="quantidade" />
+</div>
+<div>
+  <label for="mes">Mês:</label>
+  <input type="number" id="mes" [(ngModel)]="folha.mes" name="mes" />
+</div>
+<div>
+  <label for="ano">Ano:</label>
+  <input type="number" id="ano" [(ngModel)]="folha.ano" name="ano" />
+</div>
+<div>
+  <label for="funcionarioId">ID do Funcionário:</label>
+  <input type="number" id="funcionarioId" [(ngModel)]="folha.funcionarioId" name="funcionarioId" />
+</div>
+<div>
+  <label for="salarioBruto">Salário Bruto:</label>
+  <input type="number" id="salarioBruto" [(ngModel)]="folha.salarioBruto" name="salarioBruto" />
+</div>
+
+<button (click)="cadastrar()">Cadastrar Folha</button>

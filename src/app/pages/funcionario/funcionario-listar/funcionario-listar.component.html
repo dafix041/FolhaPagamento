@@ -1,0 +1,16 @@
+<h1>Listagem de funcionarios</h1>
+
+<table id="table">
+  <tr>
+    <th>#</th>
+    <th>Nome</th>
+    <th>CPF</th>
+   
+  </tr>
+  <tr *ngFor="let p of funcionarios">
+    <td>{{ p.funcionarioId }}</td>
+    <td>{{ p.nome }}</td>
+    <td>{{ p.cpf }}</td>
+    
+  </tr>
+</table>

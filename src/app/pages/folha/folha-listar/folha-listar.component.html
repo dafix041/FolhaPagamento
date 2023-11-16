@@ -1,0 +1,26 @@
+<h1>Listagem de Folhas de Pagamento</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Valor</th>
+      <th>Quantidade</th>
+      <th>Mês</th>
+      <th>Ano</th>
+      <th>ID do Funcionário</th>
+      <th>Salário Bruto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let folha of folhas">
+      <td>{{ folha.id }}</td>
+      <td>{{ folha.valor }}</td>
+      <td>{{ folha.quantidade }}</td>
+      <td>{{ folha.mes }}</td>
+      <td>{{ folha.ano }}</td>
+      <td>{{ folha.funcionarioId }}</td>
+      <td>{{ folha.salarioBruto }}</td>
+    </tr>
+  </tbody>
+</table>
