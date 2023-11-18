@@ -1,41 +1,35 @@
-import { HttpClient } from "@angular/common/http";
-import { Component } from "@angular/core";
-import { Router } from "@angular/router";
-import { Funcionario } from "src/app/models/funcionario.model";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Funcionario } from 'src/app/models/funcionario.model';
 
 @Component({
-  selector: "app-funcionario-cadastrar",
-  templateUrl: "./funcionario-cadastrar.component.html",
-  styleUrls: ["./funcionario-cadastrar.component.css"],
+  selector: 'app-funcionario-cadastrar',
+  templateUrl: './funcionario-cadastrar.component.html',
+  styleUrls: ['./funcionario-cadastrar.component.css'],
 })
-export class FuncionarioCadastrarComponent {
-  nome: string = "";
-  cpf: string = "";
+export class FuncionarioCadastrarComponent implements OnInit {
+  nome: string = '';
+  cpf: string = '';
   funcionarioId: number = 0;
+  cadastroFuncionarioForm: FormGroup = this.formBuilder.group({
+    nome: ['', [Validators.required]],
+    cpf: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
+    funcionarioId: [''],
+  });
 
-  constructor(private client: HttpClient, private router: Router) {}
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
+
+  ngOnInit() {}
 
   cadastrar(): void {
-    let funcionario: Funcionario = {
-      nome: this.nome,
-      cpf: this.cpf,
-      funcionarioId: this.funcionarioId,
-    };
+    if (this.cadastroFuncionarioForm.valid) {
+      let funcionario: Funcionario = this.cadastroFuncionarioForm.value;
 
-    this.client
-      .post<Funcionario>(
-        "https://localhost:7114/api/funcionario/cadastrar",
-        funcionario
-      )
-      .subscribe({
-        // A requisição funcionou
-        next: (funcionario) => {
-          this.router.navigate(["pages/funcionario/listar"]);
-        },
-        // A requisição não funcionou
-        error: (erro) => {
-          console.log(erro);
-        },
-      });
+      // Realizar a lógica de cadastro, por exemplo, enviar para o backend
+
+      // Após o cadastro, navegar para a lista de funcionários
+      this.router.navigate(['pages/funcionario/listar']);
+    }
   }
 }

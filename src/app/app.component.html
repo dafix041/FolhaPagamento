@@ -1,13 +1,43 @@
-<style>
-    .menu-link {
-      margin-right: 10px; 
-    }
-  </style>
-  
-  <a routerLink="/pages/funcionario/listar" class="menu-link"> Listar funcionários </a>
-  <a routerLink="/pages/funcionario/cadastrar" class="menu-link"> Cadastrar </a>
-  <a routerLink="/pages/folha/cadastrar" class="menu-link"> Cadastrar Folha </a>
-  <a routerLink="/pages/folha/listar" class="menu-link"> Listagem Folhas </a>
-  
-  <router-outlet></router-outlet>
-  
+<!-- Barra de ferramentas -->
+<mat-toolbar color="primary">
+  <button class="menu" mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon> menu </mat-icon>
+  </button>
+  <span>Folha de pagamento</span>
+</mat-toolbar>
+
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav [opened]="true" mode="side">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/pages/funcionario/listar">
+        <div class="item">
+          <mat-icon class="icon"> list </mat-icon>
+          <span> Listar Funcionários </span>
+        </div>
+      </a>
+      <a mat-list-item routerLink="/pages/funcionario/cadastrar">
+        <div class="item">
+          <mat-icon class="icon"> add </mat-icon>
+          <span> Cadastrar Funcionário </span>
+        </div>
+      </a>
+      <a mat-list-item routerLink="/pages/folha/listar">
+        <div class="item">
+          <mat-icon class="icon"> list </mat-icon>
+          <span> Listar Folhas </span>
+        </div>
+      </a>
+      <a mat-list-item routerLink="/pages/folha/cadastrar">
+        <div class="item">
+          <mat-icon class="icon"> add </mat-icon>
+          <span> Cadastrar Folha </span>
+        </div>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Conteúdo ocupando a tela inteira -->
+  <mat-sidenav-content style="height: 100vh; width: 100vw; display: flex; flex-direction: column;">
+    <router-outlet flex> </router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,17 +1,17 @@
-<!-- funcionario-cadastrar.component.html -->
+<!-- Seu template HTML -->
 
 <h1>Cadastrar Funcionário</h1>
 
-<form>
-  <div>
-    <label>Nome:</label>
-    <input type="text" [(ngModel)]="nome" name="nome" />
-  </div>
-  <div>
-    <label>CPF:</label>
-    <input type="text" [(ngModel)]="cpf" name="cpf" />
-  </div>
-  <div>
-    <button (click)="cadastrar()">Cadastrar Funcionário</button>
-  </div>
+<form [formGroup]="cadastroFuncionarioForm">
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input matInput formControlName="nome" placeholder="Nome do funcionário" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>CPF</mat-label>
+    <input matInput formControlName="cpf" placeholder="CPF do funcionário" />
+  </mat-form-field>
+
+  <button mat-raised-button type="submit" (click)="cadastrar()">Cadastrar Funcionário</button>
 </form>
