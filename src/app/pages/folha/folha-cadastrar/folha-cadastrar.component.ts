@@ -1,5 +1,5 @@
 import { HttpClient } from "@angular/common/http";
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { Folha } from "src/app/models/folha.model";
 import { Funcionario } from "src/app/models/funcionario.model";
@@ -11,7 +11,7 @@ import { Funcionario } from "src/app/models/funcionario.model";
 })
 export class FolhaCadastrarComponent {
   folha: Folha = {
-    id: 0,
+    folhaId: 0,
     valor: 0,
     quantidade: 0,
     mes: 0,

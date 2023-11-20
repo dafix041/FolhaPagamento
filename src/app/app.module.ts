@@ -11,6 +11,7 @@ import { FuncionarioCadastrarComponent } from "./pages/funcionario/funcionario-c
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FolhaCadastrarComponent } from './pages/folha/folha-cadastrar/folha-cadastrar.component';
 import { FolhaListarComponent } from './pages/folha/folha-listar/folha-listar.component';
+import { AlterarFuncionarioComponent } from './pages/alterar/alterar-funcionario/alterar-funcionario.component';
 
 // Adicione os seguintes imports para os módulos do Angular Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,6 +20,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field'; // Adicione esta linha
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from "@angular/material/input";
+import { MatSelectModule } from "@angular/material/select";
+
+
 
 
 @NgModule({
@@ -28,6 +34,7 @@ import { MatFormFieldModule } from '@angular/material/form-field'; // Adicione e
     FuncionarioCadastrarComponent,
     FolhaCadastrarComponent,
     FolhaListarComponent,
+    AlterarFuncionarioComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +48,12 @@ import { MatFormFieldModule } from '@angular/material/form-field'; // Adicione e
     MatListModule,
     MatIconModule,
     MatFormFieldModule, // Adicione esta linha
+    MatCardModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatSelectModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent],

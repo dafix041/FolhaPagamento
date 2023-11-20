@@ -4,6 +4,7 @@ import { FuncionarioListarComponent } from "./pages/funcionario/funcionario-list
 import { FuncionarioCadastrarComponent } from "./pages/funcionario/funcionario-cadastrar/funcionario-cadastrar.component";
 import { FolhaCadastrarComponent } from "./pages/folha/folha-cadastrar/folha-cadastrar.component";
 import { FolhaListarComponent } from "./pages/folha/folha-listar/folha-listar.component";
+import { AlterarFuncionarioComponent } from "./pages/alterar/alterar-funcionario/alterar-funcionario.component";
 
 const routes: Routes = [
   {
@@ -26,6 +27,11 @@ const routes: Routes = [
   {
     path: "pages/folha/listar",
     component: FolhaListarComponent
+  },
+
+  {
+    path: "pages/alterar/alterar/:id",
+    component: AlterarFuncionarioComponent,
   }
   
 ];

@@ -1,16 +1,25 @@
-<h1>Listagem de funcionarios</h1>
-
-<table id="table">
+<!-- Seu template HTML -->
+<table>
   <tr>
     <th>#</th>
     <th>Nome</th>
     <th>CPF</th>
-   
+    <th></th> <!-- Nova coluna para o botão de deletar -->
   </tr>
-  <tr *ngFor="let p of funcionarios">
-    <td>{{ p.funcionarioId }}</td>
-    <td>{{ p.nome }}</td>
-    <td>{{ p.cpf }}</td>
-    
+  <tr *ngFor="let funcionario of funcionarios">
+    <td>{{ funcionario.id }}</td>
+    <td>{{ funcionario.nome }}</td>
+    <td>{{ funcionario.cpf }}</td>
+    <td>
+      <button mat-icon-button color="warn" (click)="deletar(funcionario.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+    <td>
+      <a mat-raised-button color="primary" routerLink="/pages/alterar/alterar/{{funcionario.id}}">
+        <mat-icon>edit</mat-icon>
+        Editar funcionário
+      </a>
+    </td>
   </tr>
 </table>

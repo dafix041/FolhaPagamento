@@ -1,28 +1,57 @@
 <h1>Cadastrar Folha de Pagamento</h1>
 
-<div>
-  <label for="valor">Valor:</label>
-  <input type="number" id="valor" [(ngModel)]="folha.valor" name="valor" />
-</div>
-<div>
-  <label for="quantidade">Quantidade:</label>
-  <input type="number" id="quantidade" [(ngModel)]="folha.quantidade" name="quantidade" />
-</div>
-<div>
-  <label for="mes">Mês:</label>
-  <input type="number" id="mes" [(ngModel)]="folha.mes" name="mes" />
-</div>
-<div>
-  <label for="ano">Ano:</label>
-  <input type="number" id="ano" [(ngModel)]="folha.ano" name="ano" />
-</div>
-<div>
-  <label for="funcionarioId">ID do Funcionário:</label>
-  <input type="number" id="funcionarioId" [(ngModel)]="folha.funcionarioId" name="funcionarioId" />
-</div>
-<div>
-  <label for="salarioBruto">Salário Bruto:</label>
-  <input type="number" id="salarioBruto" [(ngModel)]="folha.salarioBruto" name="salarioBruto" />
-</div>
+<form class="mat-elevation-z2 form-container">
 
-<button (click)="cadastrar()">Cadastrar Folha</button>
+  <div class="form-group">
+    <label for="valor">Valor:</label>
+    <mat-form-field>
+      <mat-label>Valor</mat-label>
+      <input matInput type="number" [(ngModel)]="folha.valor" name="valor" placeholder="Digite o valor" />
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <label for="quantidade">Quantidade:</label>
+    <mat-form-field>
+      <mat-label>Quantidade</mat-label>
+      <input matInput type="number" [(ngModel)]="folha.quantidade" name="quantidade" placeholder="Digite a quantidade" />
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <label for="mes">Mês:</label>
+    <mat-form-field>
+      <mat-label>Mês</mat-label>
+      <input matInput type="number" [(ngModel)]="folha.mes" name="mes" placeholder="Digite o mês" />
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <label for="ano">Ano:</label>
+    <mat-form-field>
+      <mat-label>Ano</mat-label>
+      <input matInput type="number" [(ngModel)]="folha.ano" name="ano" placeholder="Digite o ano" />
+    </mat-form-field>
+  </div>
+
+  <div *ngFor="let funcionario of funcionarios" class="form-group">
+    <label for="funcionarioId">ID do Funcionário:</label>
+    <mat-form-field>
+      <mat-label>ID do Funcionário</mat-label>
+      <select matNativeControl [(ngModel)]="folha.funcionarioId" name="funcionarioId">
+        <mat-option value="" disabled selected>Selecione um funcionário</mat-option>
+        <mat-option  [value]="funcionario.id">{{ funcionario.nome }}</mat-option>
+      </select>
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <label for="salarioBruto">Salário Bruto:</label>
+    <mat-form-field>
+      <mat-label>Salário Bruto</mat-label>
+      <input matInput type="number" [(ngModel)]="folha.salarioBruto" name="salarioBruto" placeholder="Digite o salário bruto" />
+    </mat-form-field>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="cadastrar()">Cadastrar Folha</button>
+</form>

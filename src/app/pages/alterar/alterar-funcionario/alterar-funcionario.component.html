@@ -1,0 +1,23 @@
+<mat-card class="container">
+    <mat-card-header>
+      <mat-card-title> Alterar Funcionário </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field id="nome" class="input">
+        <mat-label for="nome">Nome:</mat-label>
+        <input matInput type="text" id="nome" [(ngModel)]="nome" />
+      </mat-form-field>
+  
+      <mat-form-field id="cpf" class="input">
+        <mat-label for="cpf">CPF:</mat-label>
+        <input matInput type="text" id="cpf" [(ngModel)]="cpf" />
+      </mat-form-field>
+  
+      <!-- Outros campos do funcionário podem ser adicionados aqui -->
+  
+    </mat-card-content>
+    <button mat-raised-button color="warn" id="btnAlterar" (click)="alterar()">
+      Alterar Funcionário
+    </button>
+  </mat-card>
+  
