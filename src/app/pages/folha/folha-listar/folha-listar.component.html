@@ -21,6 +21,12 @@
       <td>{{ folha.ano }}</td>
       <td>{{ folha.funcionarioId }}</td>
       <td>{{ folha.salarioBruto }}</td>
+      <td>
+        <a mat-raised-button color="primary" routerLink="/pages/folha/alterar/{{folha.folhaId}}">
+          <mat-icon>edit</mat-icon>
+          Editar folha
+        </a>
+      </td>
     </tr>
   </tbody>
 </table>

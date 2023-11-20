@@ -1,0 +1,45 @@
+<mat-card class="container">
+    <mat-card-header>
+      <mat-card-title> Alterar Folha de Pagamento </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field id="valor" class="input">
+        <mat-label for="valor">Valor:</mat-label>
+        <input matInput type="number" id="valor" [(ngModel)]="valor" />
+      </mat-form-field>
+  
+      <mat-form-field id="quantidade" class="input">
+        <mat-label for="quantidade">Quantidade:</mat-label>
+        <input matInput type="number" id="quantidade" [(ngModel)]="quantidade" />
+      </mat-form-field>
+  
+      <mat-form-field id="mes" class="input">
+        <mat-label for="mes">Mês:</mat-label>
+        <input matInput type="number" id="mes" [(ngModel)]="mes" />
+      </mat-form-field>
+  
+      <mat-form-field id="ano" class="input">
+        <mat-label for="ano">Ano:</mat-label>
+        <input matInput type="number" id="ano" [(ngModel)]="ano" />
+      </mat-form-field>
+  
+        <mat-form-field  class="input" id="funcionario">
+          <mat-label>ID do Funcionário</mat-label>
+          <mat-select [(ngModel)]="funcionarioId">
+            <mat-option *ngFor="let funcionario of funcionarios"[value]="funcionario.id">{{ funcionario.nome }}</mat-option>
+          </mat-select>
+        </mat-form-field> 
+      <mat-form-field id="salarioBruto" class="input">
+        <mat-label for="salarioBruto">Salário Bruto:</mat-label>
+        <input matInput type="number" id="salarioBruto" [(ngModel)]="salarioBruto" />
+      </mat-form-field>
+  
+      <!-- Outros campos da folha de pagamento podem ser adicionados aqui -->
+  
+    </mat-card-content>
+    <button mat-raised-button color="warn" id="btnAlterar" (click)="alterar()">
+      Alterar Folha de Pagamento
+    </button>
+    
+  </mat-card>
+  

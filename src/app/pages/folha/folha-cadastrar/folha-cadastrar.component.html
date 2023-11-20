@@ -34,14 +34,13 @@
     </mat-form-field>
   </div>
 
-  <div *ngFor="let funcionario of funcionarios" class="form-group">
+  <div class="form-group">
     <label for="funcionarioId">ID do Funcionário:</label>
     <mat-form-field>
       <mat-label>ID do Funcionário</mat-label>
-      <select matNativeControl [(ngModel)]="folha.funcionarioId" name="funcionarioId">
-        <mat-option value="" disabled selected>Selecione um funcionário</mat-option>
-        <mat-option  [value]="funcionario.id">{{ funcionario.nome }}</mat-option>
-      </select>
+      <mat-select matNativeControl [(ngModel)]="folha.funcionarioId" name="funcionarioId">
+        <mat-option *ngFor="let funcionario of funcionarios"  [value]="funcionario.id">{{ funcionario.nome }}</mat-option>
+      </mat-select>
     </mat-form-field>
   </div>
 

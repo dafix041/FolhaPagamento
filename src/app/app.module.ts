@@ -23,6 +23,7 @@ import { MatFormFieldModule } from '@angular/material/form-field'; // Adicione e
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
+import { FolhaAlterarComponent } from './pages/folha/folha-alterar/folha-alterar.component';
 
 
 
@@ -35,6 +36,7 @@ import { MatSelectModule } from "@angular/material/select";
     FolhaCadastrarComponent,
     FolhaListarComponent,
     AlterarFuncionarioComponent,
+    FolhaAlterarComponent,
   ],
   imports: [
     BrowserModule,

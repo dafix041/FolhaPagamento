@@ -19,12 +19,13 @@ export class FolhaCadastrarComponent {
     funcionarioId: 0,
     salarioBruto: 0,
   };
-
   funcionarios: Funcionario[] = [];
+
 
   constructor(private client: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
+    
     this.client.get<Funcionario[]>("https://localhost:7114/api/funcionario/listar").subscribe({
       next: (funcionarios) => {
         console.table(funcionarios);
